@@ -4,7 +4,7 @@ public class Saper {
 	public static void main(String[] args) {
 		int w, k=0;
 		int[][] plansza = { //
-				//1	2	4	5	6	7	8	9
+				//1	2	3  4  5  6  7  8  9
 				{ 0, 1, 0, 1, 0, 0, 0, 0, 1}, //1
 				{ 0, 1, 1, 1, 0, 0, 0, 0, 0 }, //2
 				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 }, //3
@@ -54,6 +54,14 @@ public class Saper {
 		if(wiersz!=0 && wiersz!=plansza.length-1 && kolumna==plansza[0].length-1){
 			return plansza[wiersz - 1][kolumna] + plansza[wiersz + 1][kolumna] + plansza[wiersz][kolumna - 1]
 					+ plansza[wiersz - 1][kolumna - 1] + plansza[wiersz + 1][kolumna - 1];
+		}
+		if(wiersz==0 && kolumna != plansza[0].length-1 && kolumna!=0){
+			return plansza[wiersz][kolumna-1] + plansza[wiersz][kolumna+1] + plansza[wiersz+1][kolumna + 1]
+					+ plansza[wiersz + 1][kolumna - 1] + plansza[wiersz + 1][kolumna];
+		}
+		if(wiersz==plansza.length-1 && kolumna != plansza[0].length-1 && kolumna!=0){
+			return plansza[wiersz][kolumna-1] + plansza[wiersz][kolumna+1] + plansza[wiersz-1][kolumna + 1]
+					+ plansza[wiersz - 1][kolumna - 1] + plansza[wiersz - 1][kolumna];
 		}
 		return plansza[wiersz - 1][kolumna] + plansza[wiersz + 1][kolumna] + plansza[wiersz][kolumna - 1]
 				+ plansza[wiersz][kolumna + 1] + plansza[wiersz - 1][kolumna - 1] + plansza[wiersz - 1][kolumna + 1]
