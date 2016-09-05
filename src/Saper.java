@@ -29,6 +29,10 @@ public class Saper {
 
 	private static int policzBomby(int[][] plansza, int wiersz, int kolumna) {
 
+		//1
+		if(plansza[wiersz][kolumna]==1){
+			return plansza[wiersz][kolumna];
+		}
 		//ok
 		if(wiersz==0 && kolumna==0){
 			return plansza[wiersz + 1][kolumna] + plansza[wiersz][kolumna+1] + plansza[wiersz + 1][kolumna+1];
